@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="./resources/styles/styles.css" />
+    <script>
+      tailwind.config = {
+        theme: {
+           darkMode: 'class',
+          extend: {
+            colors: {
+              clifford: '#da373d',
+              blueDeep: '#171829',
+              light: '#7B829833',
+              darkLight: '#10101C',
+              primary: '#5C61F2',
+              primaryLight: '#F2F5FA',
+              secondary: '#FF9766',
+              muted: "#f1e6f5"
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <main class="flex bg-gray-50">
+      <!-- sidebar -->
+      <div
+      id="sidebarMenu"
+        class="fixed left-0 transition-all z-10 duration-300 ease-in-out hidden md:block w-64 h-full bg-blueDeep shadow-md sidebar"
+      >
+        <div
+          class="flex items-center justify-between px-3 py-4 border-b border-light"
+        >
+          <a href="#">
+            <img src="./resources/images/logo.png" alt="" />
+          </a>
+          <button class="bg-light rounded-full flex items-center px-2 py-2">
+            <i class="fa-solid fa-grip text-white text-center"></i>
+          </button>
+        </div>
+        <div class="px-5 py-4 block">
+          <p class="text-white bg-darkLight rounded-md text-left py-1 px-2">
+            General
+          </p>
+        </div>
+        <!-- DASHBOARD -->
+        <div>
+          <ul>
+            <div>
+              <div
+                id="dropdownButton"
+                class="flex items-center justify-between text-white opacity-60 px-4 cursor-pointer py-2"
+              >
+                <span class="flex items-center gap-3">
+                  <span class="fa-solid fa-house"></span>
+                  <span>Dashboard</span>
+                </span>
+                <button>
+                  <i class="fa-solid fa-chevron-down text-[0.7rem]"></i>
+                </button>
+              </div>
+              <ul
+                id="dropdownMenu"
+                class="mx-6 px-1 border-dashed border-gray-400 flex-col my-3 content-container border-l"
+              >
+                <li class="links">
+                  <a
+                    href="#"
+                    class="text-gray-300 px-3 py-2 transition-all duration-200 ease-in-out hover:ml-1"
+                    >Default</a
+                  >
+                </li>
+                <li class="links">
+                  <a
+                    href="#"
+                    class="text-gray-300 px-3 py-2 transition-all duration-200 ease-in-out hover:ml-1"
+                    >Ecommerce</a
+                  >
+                </li>
+                <li class="links">
+                  <a
+                    href="#"
+                    class="text-gray-300 px-3 py-2 transition-all duration-200 ease-in-out hover:ml-1"
+                    >Project</a
+                  >
+                </li>
+              </ul>
+            </div>
+
+            <!--  -->
+            <div>
+              <div
+                id="dropdownButton2"
+                class="flex items-center justify-between text-white opacity-60 px-4 cursor-pointer py-2"
+              >
+                <span class="flex items-center gap-3">
+                  <span class="fa-solid fa-chart-pie"></span>
+                  <span>Widgets</span>
+                </span>
+                <button>
+                  <i class="fa-solid fa-chevron-down text-[0.7rem]"></i>
+                </button>
+              </div>
+              <ul
+                id="dropdownMenu2"
+                class="hidden mx-6 px-1 border-dashed border-gray-400 flex-col my-3 content-container border-l"
+              >
+                <li class="links">
+                  <a
+                    href="#"
+                    class="text-gray-300 px-3 py-2 transition-all duration-200 ease-in-out hover:ml-1"
+                    >General</a
+                  >
+                </li>
+                <li class="links">
+                  <a
+                    href="#"
+                    class="text-gray-300 px-3 py-2 transition-all duration-200 ease-in-out hover:ml-1"
+                    >Chart</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!--  -->
+            <div>
+              <div
+                id="menu_btn"
+                class="flex items-center justify-between text-white opacity-60 px-4 cursor-pointer py-2"
+              >
+                <span class="flex items-center gap-3">
+                  <span class="fa-solid fa-newspaper"></span>
+                  <span>Page Layout</span>
+                </span>
+                <button>
+                  <i class="fa-solid fa-chevron-down text-[0.7rem]"></i>
+                </button>
+              </div>
+              <ul
+                id="menu_content"
+                class="hidden mx-6 px-1 border-dashed border-gray-400 flex-col my-3 content-container border-l"
+              >
+                <li class="links">
+                  <a
+                    href="#"
+                    class="text-gray-300 px-3 py-2 transition-all duration-200 ease-in-out hover:ml-1"
+                    >Boxed</a
+                  >
+                </li>
+                <li class="links">
+                  <a
+                    href="#"
+                    class="text-gray-300 px-3 py-2 transition-all duration-200 ease-in-out hover:ml-1"
+                    >RTL</a
+                  >
+                </li>
+                <li class="links">
+                  <a
+                    href="#"
+                    class="text-gray-300 px-3 py-2 transition-all duration-200 ease-in-out hover:ml-1"
+                    >Dark Layout</a
+                  >
+                </li>
+                <li class="links">
+                  <a
+                    href="#"
+                    class="text-gray-300 px-3 py-2 transition-all duration-200 ease-in-out hover:ml-1"
+                    >Hide Nav Scroll</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!--  -->
+            <div class="px-5 py-4">
+              <p
+                class="text-white bg-darkLight rounded-md block text-left py-1 px-2"
+              >
+                Application
+              </p>
+            </div>
+            <!--  -->
+            <div>
+              <div
+                id="menu_btn2"
+                class="flex items-center justify-between text-white opacity-60 px-4 cursor-pointer py-2"
+              >
+                <span class="flex items-center gap-3">
+                  <span class="fa-solid fa-circle-info"></span>
+                  <span>Project</span>
+                </span>
+                <button>
+                  <i class="fa-solid fa-chevron-down text-[0.7rem]"></i>
+                </button>
+              </div>
+              <ul
+                id="menu_content2"
+                class="flex mx-6 px-1 border-dashed border-gray-400 flex-col my-3 content-container border-l"
+              >
+                <li class="links">
+                  <a
+                    href="#"
+                    class="text-gray-300 px-3 py-2 transition-all duration-200 ease-in-out hover:ml-1"
+                    >Project List</a
+                  >
+                </li>
+                <li class="links">
+                  <a
+                    href="#"
+                    class="text-gray-300 px-3 py-2 transition-all duration-200 ease-in-out hover:ml-1"
+                    >Create New</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <!--  -->
+            <div>
+              <div
+                id="menu_btn3"
+                class="flex items-center justify-between text-white opacity-60 px-4 cursor-pointer py-2"
+              >
+                <span class="flex items-center gap-3">
+                  <span class="fa-solid fa-message"></span>
+                  <span>Chat</span>
+                </span>
+                <button>
+                  <i class="fa-solid fa-chevron-down text-[0.7rem]"></i>
+                </button>
+              </div>
+              <ul
+                id="menu_content3"
+                class="flex mx-6 px-1 border-dashed border-gray-400 flex-col my-3 content-container border-l"
+              >
+                <li class="links">
+                  <a
+                    href="#"
+                    class="text-gray-300 px-3 py-2 transition-all duration-200 ease-in-out hover:ml-1"
+                    >Private Chat</a
+                  >
+                </li>
+                <li class="links">
+                  <a
+                    href="#"
+                    class="text-gray-300 px-3 py-2 transition-all duration-200 ease-in-out hover:ml-1"
+                    >Group Chat</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </ul>
+        </div>
+        <!-- DASHBOARD -->
+      </div>
+      <!--  -->
+      <div class="w-full md:pl-64">
+        <!-- navbar begings -->
+        <div class="bg-white shadow-sm px-5">
+          <nav class="flex items-center px-4 py-3 justify-between">
+            <div
+              class="hidden md:flex items-center gap-2 bg-gray-100 px-4 py-2 md:w-[40%] rounded-md"
+            >
+              <i class="fa-solid fa-search"></i>
+              <input
+                type="text"
+                placeholder="Search anything....."
+                class="bg-transparent w-full outline-none"
+              />
+            </div>
+            <div class="bg-primaryLight md:hidden block py-1 px-2 rounded-full">
+                <button id="toggle_btn" class="text-primary text-xl">
+                  <i
+                    class="fa-solid fa-grip duration-75 ease-in-out"
+                  ></i>
+                </button>
+              </div>
+            <ul class="flex items-center gap-2">
+              <div class="bg-primaryLight py-1 relative px-2 rounded-full">
+                <a href="#" class="text-primary">
+                  <i
+                    class="fa-solid fa-bell animate-bounce duration-75 ease-in-out"
+                  ></i>
+                </a>
+                <span
+                  class="absolute bottom-6 right-0 bg-primary text-[0.5rem] px-1 rounded-full text-white"
+                  >3</span
+                >
+              </div>
+              <div class="bg-primaryLight py-1 px-2 rounded-full">
+                <a href="#" class="text-primary">
+                  <i
+                    class="fa-solid fa-star animate-pulse duration-75 ease-in-out"
+                  ></i>
+                </a>
+              </div>
+              <button
+                class="bg-primaryLight py-1 px-2 rounded-full"
+                id="toggle_switch"
+              >
+                <i class="fa-solid fa-circle-half-stroke text-primary"></i>
+              </button>
+              <div class="bg-primaryLight py-1 relative px-2 rounded-full">
+                <a href="#" class="text-primary">
+                  <i
+                    class="fa-solid fa-envelope md:animate-pulse duration-75 ease-in-out"
+                  ></i>
+                </a>
+                <span
+                  class="absolute bottom-6 right-0 bg-secondary text-[0.5rem] px-1 rounded-full text-white"
+                  >3</span
+                >
+              </div>
+              <div class="bg-primaryLight py-1 px-2 rounded-full">
+                <a href="#" class="text-primary">
+                  <i
+                    class="fa-solid fa-cart-shopping duration-75 ease-in-out"
+                  ></i>
+                </a>
+              </div>
+              <!-- profile section -->
+               <div class="flex items-center gap-1">
+                 <div>
+                  <img src="./resources/images/profile.png" class="md:w-full w-7"  alt="">
+                 </div>
+                 <div class="md:flex hidden items-center flex-col">
+                   <p class="text-sm capitalize text-gray-400 font-medium">Alen Miller</p>
+                   <p class="text-sm text-gray-400 ">UI Designer</p>
+                 </div>
+               </div>
+            </ul>
+          </nav>
+        </div>
+        <!-- navbar ends  -->
+         <!-- mini section -->
+          <div class="flex items-center py-3 justify-between md:px-8 px-4">
+             <div>
+                 <h1 class="font-medium md:text-xl text-gray-900">Default Dashboard</h1>
+             </div>
+             <div class="flex items-center gap-1 md:gap-2">
+              <span class="fa-solid fa-house bg-primaryLight text-primary p-2"></span>
+              <p class="text-primary font-medium">/ Dashboard</p>
+            
+               <p class="text-primary opacity-100">/ Default</p>
+             </div>
+          </div>
+          <!-- main content -->
+           <main class="">
+                <!--Card 1  -->
+           </main>
+      </div>
+    </main>
+    <script src="./resources/js/script.js"></script>
+  </body>
+</html>
+
+<!-- 
+<i class="fa-solid fa-circle-half-stroke"></i>
+<i class="fa-solid fa-envelope"></i>
+<i class="fa-solid fa-cart-shopping"></i>
+-->
